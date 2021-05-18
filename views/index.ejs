@@ -1,0 +1,40 @@
+<input id="token" type="hidden" value="<%= token %>">
+<h1>ADD TASKS</h1>
+<form method="post" enctype="multipart/form-data" action="/test-task-backend/v2/create">
+    <label for="user">Username:</label>
+    <input type="text" id="user" placeholder="user" name="user" value=""><br><br>
+    <label for="user">Email:</label>
+    <input type="email" id="email"  placeholder="email" name="email" value=""><br><br>
+    <label for="user">Text:</label>
+    <textarea type="text" id="text" placeholder="text"   name="text"  value=""></textarea><br><br>
+    <input name="token" id="auth" type="hidden" value="<%= token %>">
+
+    <input type="submit" value="ADD" style="color:white;background-color:greenyellow" >
+</form>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    function keepToken(){
+        window.localStorage.setItem('token',document.getElementById('token').value)
+        document.getElementById('token').value = ""
+        console.log(window.localStorage.getItem('token'))
+    }
+    keepToken();
+
+
+
+
+
+
+</script>
