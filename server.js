@@ -28,6 +28,9 @@ app.use(bodyParser.json());
 app.use("/test-task-backend/v2", usersRouter);
 app.use(bodyParser.urlencoded({extended: true}));
 
+app.get("/ping",(req,res)=>{
+    res.json({ping:'pong'});
+})
 
 db.sequelize.sync({force: true}).then(() => {
     console.log("Drop and re-sync db.");
